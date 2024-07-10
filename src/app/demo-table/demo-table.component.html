@@ -1,0 +1,23 @@
+<div *ngIf="loading">Loading...</div>
+
+<div *ngIf="!loading && roles.length > 0">
+  <h2>Roles:</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Value</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let role of roles">
+        <td>{{ role.name }}</td>
+        <td>{{ role.value }}</td> <!-- Display value if it exists -->
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div *ngIf="!loading && roles.length === 0">
+  <p>No roles available.</p>
+</div>
